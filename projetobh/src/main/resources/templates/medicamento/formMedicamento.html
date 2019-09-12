@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Formulario de cadastro de medicamento</title>
+<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <link rel="stylesheet" href="style/styleCss.css"/>
+</head>
+<body>
+	
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Logo</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+				<!--<li><a href="medicamentos" class="waves-effect waves-light btn"><i class="material-icons right">dehaze</i>Lista dos medicamentos</a></li> -->
+		        <li><a href="medicamentos">Lista dos medicamentos</a></li>
+		      </ul>
+		    </div>
+  		</nav>
+	</header>
+	
+	
+	<form class="container" method="post">
+	<h1>Cadastro de medicamento</h1>
+		<div class="row">
+			<div class="input-field col s6">
+				Nome comercial: <input type="text" value="" name="nomeComercial"/>
+			</div>
+			<div class="input-field col s3">
+				Nome genérico: <input type="text" value="" name="nomeGenerico"/>
+			</div>
+			<div class="input-field col s3">
+				Laboratorio: <input type="text" value="" name="laboratorio"/>
+			</div>
+			<div class="input-field col s3">
+				Lote: <input type="text" value="" name="lote"/>
+			</div>
+			<div class="input-field col s3">
+				Vencimento: <input type="date" value="" name="vencimento"/>
+			</div>
+			<div class="input-field col s3">
+				Concentracao do medicamento(mg,g,kg): <input type="text" value="" name="concentracaoMedicamento"/>	
+			</div>
+		</div>	
+		<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+	</form>
+
+	<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      
+    	<footer class="page-footer">
+	<div class="footer-copyright">  
+	<div class="container">
+            <div class="row">
+            
+		<div class="container">
+           &copy; 2019 The SGH software
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+           </div>
+           </div>
+	</div>
+	</footer>
+</body>
+</html>

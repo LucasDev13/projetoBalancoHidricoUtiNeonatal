@@ -1,0 +1,72 @@
+<html layout:decorate="~{layout}">
+<head><meta charset="UTF-8"/></head>
+<body>
+	
+	<section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Lista de Setores</span>
+	                    </li>
+	                </ul>
+	                <a class="btn btn-primary btn-md" href="/setores/cadastrar" role="button">
+	                    <span class="oi oi-plus" title="Cadastro" aria-hidden="true"></span>
+	                    <span>Novo Setor</span>
+	                </a>
+	            </div>
+	        </nav>
+			<!-- DIV principal -->
+	        <div class="container" id="listagem">
+	        	
+	        	<div th:replace="fragments/alert"></div>
+	        	
+					<div class="table-responsive">
+					  <h1 class="page-header">Tabelas informativa para o balanço hídrico</h1>
+					  <div class="table-responsive">
+					    <table class="table table-striped table-bordered table-hover">
+					      <thead>
+					        <tr>
+					          <th>#</th>
+					          <th>sm</th>
+					          <th>voLmLa</th>
+					          <th>sondaLmLa</th>
+					          <th>soro</th>
+					          <th>npt</th>
+					          <th>hemo</th>
+					          <th>flush</th>
+					          <th>urina</th>
+					          <th>fezes</th>
+					          <th>vomito</th>
+					          <th>dreno</th>
+					          <th>estase</th>					          
+					        </tr>
+					      </thead>
+					      <tbody>
+					        <tr th:each="b : ${balancos}">
+					          <td th:text="${b.id}"></td>
+					          <td th:text="${b.sm}">Conteúdo</td>
+					          <td th:text="${b.voLmLa}">Conteúdo</td>
+					          <td th:text="${b.sondaLmLa}">Conteúdo</td>
+					          <td th:text="${b.soro}">Conteúdo</td>
+					          <td th:text="${b.npt}">Conteúdo</td>
+					          <td th:text="${b.hemo}">Conteúdo</td>
+					          <td th:text="${b.flush}">Conteúdo</td>
+					          <td th:text="${b.urina}">Conteúdo</td>
+					          <td th:text="${b.fezes}">Conteúdo</td>
+					          <td th:text="${b.vomito}">Conteúdo</td>
+					          <td th:text="${b.dreno}">Conteúdo</td>
+					          <td th:text="${b.estase}">Conteúdo</td>
+					        </tr>
+					         
+					      </tbody>
+					    </table>
+					    </div>
+					</div>
+			</div>
+			<div th:replace="fragments/modal :: modal"></div>
+	</section>
+</body>
+</html>

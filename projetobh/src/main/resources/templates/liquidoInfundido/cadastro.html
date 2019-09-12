@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head><meta charset="UTF-8"/></head>
+<body>
+	
+	<!-- PÁGINA DE CADASTRO DE SETORES -->
+	
+	<section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Cadastrar Liquidos infundidos</span>
+	                    </li>
+	                </ul>
+<!-- 	                <a class="btn btn-primary btn-md" href="/liquidosInfundidos/listar" role="button"> -->
+<!-- 	                    <span class="oi oi-spreadsheet" title="Listar" aria-hidden="true"></span> -->
+<!-- 	                    <span>Listar Liquidos infundidos(será?)</span> -->
+<!-- 	                </a> -->
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">
+	        
+<!-- 	        	<div th:replace="fragments/alert"></div> -->
+	        	
+	            <form th:action="@{/balancos/salvar}" th:object="${balancoHidrico}" method="POST">
+	                <div class="form-row">
+	                	<input type="hidden" th:field="*{id}"/>
+	                    <div class="form-group col-md-6">
+	                        <label for="sm">SM</label>
+	                        <input type="text" class="form-control" id="sm"
+	                               placeholder="sm" autofocus="autofocus" th:field="*{liquidoInfundido.sm}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="voLmLa">voLmLa</label>
+	                        <input type="text" class="form-control" id="voLmLa"
+	                               placeholder="voLmLa" autofocus="autofocus" th:field="*{liquidoInfundido.voLmLa}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="sondaLmLa">sondaLmLa</label>
+	                        <input type="text" class="form-control" id="sondaLmLa"
+	                               placeholder="sondaLmLa" autofocus="autofocus" th:field="*{liquidoInfundido.sondaLmLa}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="soro">soro</label>
+	                        <input type="text" class="form-control" id="soro"
+	                               placeholder="soro" autofocus="autofocus" th:field="*{liquidoInfundido.soro}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="npt">npt</label>
+	                        <input type="text" class="form-control" id="npt"
+	                               placeholder="npt" autofocus="autofocus" th:field="*{liquidoInfundido.npt}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="hemo">hemo</label>
+	                        <input type="text" class="form-control" id="hemo"
+	                               placeholder="hemo" autofocus="autofocus" th:field="*{liquidoInfundido.hemo}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="flush">flush</label>
+	                        <input type="text" class="form-control" id="flush"
+	                               placeholder="flush" autofocus="autofocus" th:field="*{liquidoInfundido.flush}"/>
+	                    </div>                    
+	                </div>
+	                <input type="hidden" id="id" name="id" value=""/>
+	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+	            </form>
+	        </div>
+	    </section>
+</body>
+</html>

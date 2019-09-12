@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head><meta charset="UTF-8"/></head>
+<body>
+	
+	<!-- PÁGINA DE CADASTRO DE SETORES -->
+	
+	<section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Cadastrar Liquidos Eliminados</span>
+	                    </li>
+	                </ul>
+	                <a class="btn btn-primary btn-md" href="/liquidosEliminados/listar" role="button">
+	                    <span class="oi oi-spreadsheet" title="Listar" aria-hidden="true"></span>
+	                    <span>Listar Liquidos Eliminados(será?)</span>
+	                </a>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">
+	        
+	        	<div th:replace="fragments/alert"></div>
+	        	
+	             <form th:action="@{/balancos/salvarEliminado}" th:object="${balancoHidrico}" method="POST">
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="urina">Urina</label>
+	                        <input type="text" class="form-control" id="urina" placeholder="Urina" autofocus="autofocus"
+ 	                               th:field="*{urina}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="fezes">Fezes</label>
+	                        <input type="text" class="form-control" id="fezes" placeholder="Fezes" autofocus="autofocus"
+	                               th:field="*{fezes}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="vomito">Vomito</label>
+	                        <input type="text" class="form-control" id="vomito" placeholder="Vomito" autofocus="autofocus"
+	                               th:field="*{vomito}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="dreno">Dreno</label>
+	                        <input type="text" class="form-control" id="dreno" placeholder="Dreno" autofocus="autofocus"
+	                               th:field="*{dreno}"/>
+	                    </div>
+	                    <div class="form-group col-md-6">
+	                        <label for="estase">Estase</label>
+	                        <input type="text" class="form-control" id="estase" placeholder="Estase" autofocus="autofocus"
+	                               th:field="*{estase}"/>
+	                    </div>
+	                </div>
+	                <input type="hidden" id="id" name="id" value=""/>
+	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+	            </form>
+	        </div>
+	    </section>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head><meta charset="UTF-8"/></head>
+<body>
+	
+	<!-- PÁGINA DE CADASTRO DE SETORES -->
+	
+	<section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Cadastrar Setor</span>
+	                    </li>
+	                </ul>
+	                <a class="btn btn-primary btn-md" href="/setores/listar" role="button">
+	                    <span class="oi oi-spreadsheet" title="Listar" aria-hidden="true"></span>
+	                    <span>Listar Setores</span>
+	                </a>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="cadastro">
+	        
+	        	<div th:replace="fragments/alert"></div>
+	        	
+	            <form th:action="${setor.id == null} ? @{/setores/salvar} : @{/setores/editar}" 
+	            	  th:object="${setor}" method="POST">
+	                
+	                <div th:replace="fragments/validacao :: validacao"></div><!-- E importante que fique dentro do form -->
+	                
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="nome">Setor</label>
+	                        <input type="text" class="form-control" id="nome"
+	                               placeholder="Nome Setor" autofocus="autofocus" th:field="*{nomeSetor}"/>
+	                    </div>
+<!-- 	                    <div class="form-group col-md-6"> -->
+<!-- 	                        <label for="nome">Andar</label> -->
+<!-- 	                        <input type="text" class="form-control" id="nome" -->
+<!-- 	                               placeholder="Andar" autofocus="autofocus" th:field="*{andar}"/> -->
+<!-- 	                    </div> -->
+<!-- 	                    <div class="form-group col-md-6"> -->
+<!-- 	                        <label for="nome">Sala</label> -->
+<!-- 	                        <input type="text" class="form-control" id="nome" -->
+<!-- 	                               placeholder="Sala" autofocus="autofocus" th:field="*{sala}"/> -->
+<!-- 	                    </div> -->
+<!-- 	                    <div class="form-group col-md-6"> -->
+<!-- 	                        <label for="nome">Leito</label> -->
+<!-- 	                        <input type="text" class="form-control" id="nome" -->
+<!-- 	                               placeholder="Leito" autofocus="autofocus" th:field="*{leito}"/> -->
+<!-- 	                    </div> -->
+	                </div>
+	                <input type="hidden" id="id" th:field="*{id}"/>
+	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+	            </form>
+	        </div>
+	    </section>
+</body>
+</html>

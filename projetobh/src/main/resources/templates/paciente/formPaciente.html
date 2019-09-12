@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Insert title here</title>
+<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <link rel="stylesheet" href="style/styleCss.css"/>
+</head>
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Logo</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+				<!--<li><a href="cadastrarMedicamento" class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Cadastrar medicamentos</a></li> -->
+		        <li><a href="/">Pagina Inicial</a></li>
+		      </ul>
+		    </div>
+  		</nav>
+	</header>
+	
+	
+	
+	<form class="container" method="post">
+	<h1>Cadastro de Paciente</h1>
+		<div class="row">
+			Prontuario:<input type="text" value="" name="prontuario"/>
+			Idade:<input type="text" value="" name="idade"/>
+			Peso Nascimento:<input type="text" value="" name="pesoNascimento"/>
+			Peso Anterior:<input type="text" value="" name="pesoAnteriar"/>
+			Peso Atual:<input type="text" value="" name="pesoAtual"/>
+		</div>	
+		<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+	
+	</form>
+		<footer class="page-footer">
+	<div class="footer-copyright">  
+	<div class="container">
+            <div class="row">
+            
+		<div class="container">
+           &copy; 2019 The SGH software
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+           </div>
+           </div>
+	</div>
+	</footer>
+
+</body>
+</html>
